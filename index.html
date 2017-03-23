@@ -1,8 +1,46 @@
-<input id="getfile" type="file" accept="image/jpeg" />
-<div id="output"></div>
-<canvas hidden></canvas>
-<div id="download"></div>
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>ImgClean.io</title>
+    <meta name="description" content="A metadata stripper for your photos">
+    <meta name="author" content="Wouter Janson">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/cayman.css">
+    <link rel="stylesheet" href="css/btn.css">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">ImgClean.io</h1>
+      <h2 class="project-tagline">A metadata stripper for your photos</h2>
+      <div class="fileUpload button">
+        <span>Pick a photo</span>
+        <input id="getfile" type="file" class="upload" accept="image/jpeg"/>
+      </div>
+    </section>
 
+    <section class="main-content">
+      <h3>Removing metadata from your photos</h3>
+      <p>Modern cameras store much more information in your pictures than just that wonderful sunset or that twinkle in your girlfriend's eyes. This extra information is called metadata and contains things like the location where the photo is taken or the brand of camera.</p>
+      <p>Metadata can tell a lot more about you than you think, that's why it is a good idea to remove the metadata before you upload a photo to social media for example.</p>
+      <p><strong>Note: </strong>ImgClean.io never uploads your photo, the stripping of metadata happens on your own device. That's because we care about your privacy.</p>
+      <canvas hidden></canvas>
+      <div id="download" class="centered">
+        <a class="btn btn-warning btn-lg" href="#" disabled >Download your photo</a>
+      </div>
+      <h3>Exif Data Log:</h3>
+      <div class="exiflist" id="output">No activity yet...</div>
 
-<script src="scripts/exif.js"></script>
-<script src="scripts/imgclean.js"></script>
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/wouterjanson/ImgClean.io">ImgClean.io</a> is created by <a href="https://wouterjanson.nl/">Wouter Janson</a>.</span>
+        <span class="site-footer-credits">This page is hosted on <a href="https://pages.github.com">GitHub Pages</a> with the <a href="https://github.com/jasonlong/cayman-theme">Cayman</a> theme.</span>
+      </footer>
+
+    </section>
+    <script src="scripts/exif.js"></script>
+    <script src="scripts/imgclean.js"></script>
+  </body>
+</html>
