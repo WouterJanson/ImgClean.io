@@ -12,7 +12,7 @@
     // Get exif data
     EXIF.getData(file,
       function() {
-        outputString = '<ul>';
+        outputString = 'Removed Data:<br><ul>';
         var exifTags = EXIF.getAllTags(this);
 
         // Write exifTags to outputString
@@ -21,7 +21,6 @@
           value = exifTags[tag];
           outputString += '<li>' + tag + ': ' + value + '</li>';
         }
-
         // Set output - tags
         output.innerHTML = outputString + '</ul>';
 
@@ -34,8 +33,8 @@
           };
         } else {
           // Set output and download url - no tags
-          output.innerHTML = 'No EXIF data found, image is allready clean! 🎉';
-          download.innerHTML = '';
+          output.innerHTML = 'Removed Data: <br>No EXIF data found, image is allready clean! 🎉';
+          download.innerHTML = '<a class="btn btn-warning btn-lg" href="#" disabled >Download your photo</a>';
         }
       });
     }
@@ -49,10 +48,10 @@
     }
 
     // Canvas will only have image data no metadata
-    function imagetocanvas(img, width, heigth, fileName) {
-      canvas.width = width;
-      canvas.height = height;
-      canvas.getContext('2d').drawImage(img, 0, 0, width, height);
+    function imagetocanvas(img, w, h, fileName) {
+      canvas.width = w;
+      canvas.height = h;
+      canvas.getContext('2d').drawImage(img, 0, 0, w, h);
       var dlFileName = 'Cleaned_' + fileName;
 
       // convert to blob, because href limit
@@ -61,7 +60,7 @@
       var objurl = URL.createObjectURL(blob);
 
       // Create download link
-      download.innerHTML = '<a href="' + objurl + '" ' + 'download="' + dlFileName + '">Download</a>';
+      download.innerHTML = '<a class="btn btn-success btn-lg" href="' + objurl + '" ' + 'download="' + dlFileName + '">Download your photo</a>';
     }
 
     function dataURLtoBlob(dataurl) {
