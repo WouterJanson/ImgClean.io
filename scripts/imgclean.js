@@ -61,6 +61,11 @@
 
       // Create download link
       download.innerHTML = '<a class="btn btn-success btn-lg" href="' + objurl + '" ' + 'download="' + dlFileName + '">Download your photo</a>';
+
+      // Scroll to download link
+      if (!inViewport(download)){
+        download.scrollIntoView();
+      }
     }
 
     function dataURLtoBlob(dataurl) {
@@ -70,5 +75,18 @@
         u8arr[n] = bstr.charCodeAt(n);
       }
       return new Blob([u8arr], { type: mime });
+    }
+
+    function inViewport (el) {
+      var r, html;
+      if ( !el || 1 !== el.nodeType ) { return false; }
+      html = document.documentElement;
+      r = el.getBoundingClientRect();
+      return ( !!r
+        && r.bottom >= 0
+        && r.right >= 0
+        && r.top <= html.clientHeight
+        && r.left <= html.clientWidth
+      );
     }
   })();
