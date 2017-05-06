@@ -2,7 +2,7 @@
 [![GitHub issues](https://img.shields.io/github/issues/WouterJanson/ImgClean.io.svg)](https://github.com/WouterJanson/ImgClean.io/issues)
 [![license](https://img.shields.io/github/license/WouterJanson/ImgClean.io.svg)](https://github.com/WouterJanson/ImgClean.io/blob/master/LICENCE)
 
-ImgClean.io is a simple webtool that strips all metadata from an picture, so it’s safe to share on social media. The stripping of the metadata happens client-side, therefore the photo is never uploaded to a server.
+[ImgClean.io](http://imgclean.io/) is a simple webtool that strips all metadata from an picture, so it’s safe to share on social media. The stripping of the metadata happens client-side, therefore the photo is never uploaded to a server.
 
 ## Removing metadata from your photos
 
