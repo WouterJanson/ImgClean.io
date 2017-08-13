@@ -1,3 +1,4 @@
+[![ImgClean.io](https://wouterjanson.nl/projects/imgcleanio.png)](#imgcleanio)
 # ImgClean.io
 [![GitHub issues](https://img.shields.io/github/issues/WouterJanson/ImgClean.io.svg)](https://github.com/WouterJanson/ImgClean.io/issues)
 [![license](https://img.shields.io/github/license/WouterJanson/ImgClean.io.svg)](https://github.com/WouterJanson/ImgClean.io/blob/master/LICENCE)
