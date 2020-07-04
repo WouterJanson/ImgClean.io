@@ -33,7 +33,7 @@
           };
         } else {
           // Set output and download url - no tags
-          output.innerHTML = 'Removed Data: <br>No EXIF data found, image is allready clean! 🎉';
+          output.innerHTML = 'Removed Data: <br>No EXIF data found, image is already clean! 🎉';
           download.innerHTML = '<a class="btn btn-warning btn-lg" href="#" disabled >Download your photo</a>';
         }
       });
