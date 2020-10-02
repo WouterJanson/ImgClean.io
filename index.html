@@ -17,8 +17,10 @@
       <h1 class="project-name">ImgClean.io</h1>
       <h2 class="project-tagline">A metadata stripper for your photos</h2>
       <div class="fileUpload button">
-        <span>Pick a photo</span>
-        <input id="getfile" type="file" class="upload" accept="image/jpeg"/>
+        <label>
+          <span>Pick a photo</span>
+          <input id="getfile" type="file" class="upload" accept="image/jpeg"/>
+        </label>
       </div>
     </section>
 
@@ -28,12 +30,12 @@
       <p>Metadata can tell a lot more about you than you think, that's why it is a good idea to remove the metadata before you upload a photo to social media for example.</p>
       <p><strong>Note: </strong>ImgClean.io never uploads your photo, the stripping of metadata happens on your own device. That's because we care about your privacy.</p>
       <canvas hidden></canvas>
+      <h3>Exif Data Log:</h3>
+      <div class="exiflist" id="output">No activity yet...</div>
       <div id="download" class="centered">
         <a class="btn btn-warning btn-lg" href="#" disabled >Download your photo</a>
       </div>
-      <h3>Exif Data Log:</h3>
-      <div class="exiflist" id="output">No activity yet...</div>
-
+      
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/wouterjanson/ImgClean.io">ImgClean.io</a> is created by <a href="https://wouterjanson.nl/">Wouter Janson</a> with <a href="https://github.com/exif-js/exif-js">Exif.js</a>.</span>
         <span class="site-footer-credits">This page is hosted on <a href="https://pages.github.com">GitHub Pages</a> with the <a href="https://github.com/jasonlong/cayman-theme">Cayman</a> theme.</span>

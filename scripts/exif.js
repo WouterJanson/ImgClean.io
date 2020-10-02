@@ -352,7 +352,7 @@
             }
         }
 
-        if (img instanceof Image || img instanceof HTMLImageElement) {
+        if (img.src) {
             if (/^data\:/i.test(img.src)) { // Data URI
                 var arrayBuffer = base64ToArrayBuffer(img.src);
                 handleBinaryFile(arrayBuffer);
@@ -368,7 +368,7 @@
             } else {
                 var http = new XMLHttpRequest();
                 http.onload = function() {
-                    if (http.status == "200") {
+                    if (this.status == 200 || this.status === 0) {
                         handleBinaryFile(http.response);
                     } else {
                         throw "Could not load image";
@@ -379,7 +379,7 @@
                 http.responseType = "arraybuffer";
                 http.send(null);
             }
-        } else if (window.FileReader && (img instanceof window.Blob || img instanceof window.File)) {
+        } else if (self.FileReader && (img instanceof self.Blob || img instanceof self.File)) {
             var fileReader = new FileReader();
             fileReader.onload = function(e) {
                 if (debug) console.log("Got file of length " + e.target.result.byteLength);
@@ -740,9 +740,13 @@
         return tags;
     }
 
+    
     EXIF.getData = function(img, callback) {
-        if ((img instanceof Image || img instanceof HTMLImageElement) && !img.complete) return false;
-
+        if (((self.Image && img instanceof self.Image)
+            || (self.HTMLImageElement && img instanceof self.HTMLImageElement))
+            && !img.complete)
+            return false;
+        
         if (!imageHasData(img)) {
             getImageData(img, callback);
         } else {
@@ -802,4 +806,3 @@
         });
     }
 }.call(this));
-
